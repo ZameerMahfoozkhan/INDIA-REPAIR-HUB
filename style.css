@@ -993,3 +993,38 @@ a.info-item { cursor: pointer; }
 @keyframes shimmerBar {
   to { background-position: 200% center; }
 }
+
+/* WATERMARK AND INACCESSIBILITY OVERLAY */
+#watermark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2147483647;
+  pointer-events: none; /* Allows scrolling on body */
+  padding: 20px;
+}
+
+#watermark-overlay a {
+  color: rgba(255, 0, 0, 0.5);
+  font-size: 6vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.2;
+  text-decoration: none;
+  pointer-events: all !important; /* Make the link itself clickable */
+  cursor: pointer !important;
+}
+
+/* Make interactive elements unclickable */
+a, button, input, select, textarea, form, .btn, .service-card, .brand-card, .faq-q, .mobile-phone-btn, .close-btn, .menu-toggle, .floating-whatsapp, .floating-call {
+  pointer-events: none !important;
+  cursor: default !important;
+}
