@@ -1028,3 +1028,38 @@ a, button, input, select, textarea, form, .btn, .service-card, .brand-card, .faq
   pointer-events: none !important;
   cursor: default !important;
 }
+
+/* WATERMARK OVERLAY - LOCK DOWN SITE */
+#watermark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2147483647; /* Ensure it stays on top of everything */
+  pointer-events: none; /* Allow scrolling on the body underneath */
+  padding: 20px;
+}
+
+#watermark-overlay a {
+  color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+  font-size: 6vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  line-height: 1.2;
+  text-decoration: none;
+  pointer-events: all !important; /* Make the watermark link clickable */
+  cursor: pointer !important;
+}
+
+/* Disable all original interactive elements */
+a, button, input, select, textarea, form {
+  pointer-events: none !important;
+  cursor: default !important;
+}
